@@ -1,7 +1,8 @@
+
 'use strict';
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-import { getDatabase, ref, push, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+import { getDatabase, ref, push, serverTimestamp, get } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDyXVjspX2FqXaLq6Tu-y3eHbBHSvy2HTM",
@@ -54,7 +55,7 @@ document.addEventListener('click', (e) => {
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.pageYOffset;
-    header.style.borderBottomColor = currentScrollY > 20 ? 'var(--primary)' : 'var(--border)';
+    header.style.borderBottomColor = currentScrollY > 20 ? 'var(--primary-blue)' : 'var(--border)';
 }, { passive: true });
 
 const observerOptions = {
@@ -170,6 +171,19 @@ function getPhilippineDateTime() {
     };
 }
 
+async function getUserToken() {
+    try {
+        const userData = localStorage.getItem('wifiUser');
+        if (userData) {
+            const user = JSON.parse(userData);
+            return user.token || null;
+        }
+    } catch (error) {
+        console.error('Error reading user token:', error);
+    }
+    return null;
+}
+
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -194,6 +208,7 @@ if (contactForm) {
         }
         
         const phDateTime = getPhilippineDateTime();
+        const userToken = await getUserToken();
         
         const formData = {
             name: userName,
@@ -203,6 +218,22 @@ if (contactForm) {
             time: phDateTime.time,
             fullDateTime: phDateTime.fullDateTime
         };
+
+        if (userToken) {
+            formData.userToken = userToken;
+            
+            try {
+                const userRef = ref(database, `users/${userToken}`);
+                const snapshot = await get(userRef);
+                if (snapshot.exists()) {
+                    const userData = snapshot.val();
+                    formData.userIp = userData.ip || 'N/A';
+                    formData.userMac = userData.mac || 'N/A';
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        }
 
         try {
             const messagesRef = ref(database, 'messages');

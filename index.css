@@ -5,18 +5,22 @@
 }
 
 :root {
-    --primary: #8B7FE8;
-    --primary-light: #A99FF5;
-    --primary-dark: #6B5DD3;
-    --secondary: #E89FF5;
-    --error: #FF6B9D;
-    --white: #FFFFFF;
-    --text: #2D3748;
-    --text-medium: #4A5568;
+    --primary-blue: #667eea;
+    --primary-purple: #764ba2;
+    --primary-pink: #f093fb;
+    --secondary-orange: #fa709a;
+    --secondary-green: #4ecdc4;
+    --secondary-red: #ff6b9d;
+    --white: #ffffff;
+    --bg-soft: #f8f9fd;
+    --text: #2d3748;
+    --text-medium: #4a5568;
     --text-light: #718096;
-    --text-lighter: #A0AEC0;
-    --border: rgba(139, 127, 232, 0.2);
-    --shadow-xl: 0 12px 48px rgba(139, 127, 232, 0.2);
+    --text-lighter: #a0aec0;
+    --border: rgba(102, 126, 234, 0.15);
+    --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.08);
+    --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.12);
+    --shadow-lg: 0 8px 32px rgba(102, 126, 234, 0.16);
 }
 
 html {
@@ -36,7 +40,7 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(135deg, #E8DFFE 0%, #F5E8FF 30%, #FFE8F5 60%, #E8F5FF 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 60%, #fa709a 90%, #fee140 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -50,8 +54,8 @@ body::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 80%, rgba(139, 127, 232, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(232, 159, 245, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.15) 0%, transparent 50%);
     pointer-events: none;
     animation: subtleFloat 20s ease-in-out infinite;
 }
@@ -64,21 +68,21 @@ body::before {
 .loading-overlay {
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, #E8DFFE 0%, #F5E8FF 30%, #FFE8F5 60%, #E8F5FF 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 60%, #fa709a 90%, #fee140 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .loading-overlay::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(139, 127, 232, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
     animation: pulse 2.5s ease-in-out infinite;
 }
 
@@ -97,22 +101,25 @@ body::before {
     height: 11.25rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 0.25rem solid var(--primary);
-    box-shadow: var(--shadow-xl), 0 0 0 0.5rem rgba(139, 127, 232, 0.1);
+    border: 0.25rem solid var(--primary-blue);
+    box-shadow: var(--shadow-lg), 0 0 0 0.5rem rgba(102, 126, 234, 0.15);
     margin-bottom: 2rem;
-    transition: all 0.5s ease;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .loading-logo.spinning {
-    animation: logoSpin 3s ease forwards;
+    animation: logoSpin 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .loading-text {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     letter-spacing: -0.01em;
     line-height: 1.4;
 }
@@ -126,21 +133,22 @@ body::before {
     max-width: 28rem;
     position: relative;
     z-index: 1;
-    animation: fadeUp 0.8s ease;
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .login-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(24px);
     border-radius: 2rem;
     padding: 3rem 2.5rem;
-    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(139, 127, 232, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    transition: all 0.4s ease;
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .login-card:hover {
-    box-shadow: 0 16px 64px rgba(139, 127, 232, 0.25);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 48px rgba(102, 126, 234, 0.25);
 }
 
 @media (max-width: 480px) {
@@ -170,9 +178,9 @@ body::before {
     height: 6.25rem;
     border-radius: 50%;
     object-fit: cover;
-    border: 0.1875rem solid rgba(139, 127, 232, 0.3);
-    box-shadow: 0 0.5rem 1.5rem rgba(139, 127, 232, 0.25), 0 0 0 0.375rem rgba(139, 127, 232, 0.08);
-    transition: transform 0.3s ease;
+    border: 0.1875rem solid rgba(102, 126, 234, 0.3);
+    box-shadow: 0 0.5rem 1.5rem rgba(102, 126, 234, 0.25), 0 0 0 0.375rem rgba(102, 126, 234, 0.1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     will-change: transform;
 }
@@ -182,7 +190,7 @@ body::before {
 }
 
 .logo:active {
-    transform: scale(1.05);
+    transform: scale(1);
 }
 
 @media (max-width: 480px) {
@@ -196,14 +204,14 @@ body::before {
     font-family: 'Poppins', sans-serif;
     font-size: 1.875rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
     letter-spacing: -0.03em;
     line-height: 1.2;
-    animation: fadeDown 0.8s ease 0.2s both;
+    animation: fadeDown 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 }
 
 @media (max-width: 480px) {
@@ -222,7 +230,10 @@ body::before {
     display: inline-block;
     font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--primary-light);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     white-space: nowrap;
     animation: marquee 25s linear infinite;
     will-change: transform;
@@ -241,7 +252,7 @@ body::before {
 
 .field {
     margin-bottom: 1.5rem;
-    animation: fadeUp 0.8s ease 0.3s both;
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
 }
 
 .field:last-of-type {
@@ -255,7 +266,7 @@ body::before {
     color: var(--text);
     margin-bottom: 0.625rem;
     letter-spacing: 0.01em;
-    transition: color 0.3s ease;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-wrapper {
@@ -269,18 +280,19 @@ body::before {
     font-weight: 500;
     border: 2px solid var(--border);
     border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     color: var(--text);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     outline: none;
     font-family: 'Inter', sans-serif;
 }
 
 .input:focus {
-    border-color: var(--primary);
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 0 0 0 0.25rem rgba(139, 127, 232, 0.12);
-    transform: translateY(-2px);
+    border-color: var(--primary-blue);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.15);
+    transform: scale(1.02);
+    transform-origin: center;
 }
 
 .input::placeholder {
@@ -289,7 +301,7 @@ body::before {
 }
 
 .input:hover:not(:focus) {
-    border-color: rgba(139, 127, 232, 0.4);
+    border-color: rgba(102, 126, 234, 0.3);
 }
 
 .toggle {
@@ -297,25 +309,26 @@ body::before {
     right: 0.875rem;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(139, 127, 232, 0.1);
+    background: rgba(102, 126, 234, 0.1);
     border: none;
     border-radius: 0.625rem;
     cursor: pointer;
     padding: 0.625rem;
-    color: var(--primary);
-    transition: all 0.3s ease;
+    color: var(--primary-blue);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .toggle:hover {
-    background: rgba(139, 127, 232, 0.2);
+    background: rgba(102, 126, 234, 0.2);
     transform: translateY(-50%) scale(1.1);
+    transform-origin: center;
 }
 
 .toggle:active {
-    transform: translateY(-50%) scale(0.95);
+    transform: translateY(-50%) scale(1);
 }
 
 .icon {
@@ -330,14 +343,14 @@ body::before {
 }
 
 .error {
-    color: var(--error);
+    color: var(--secondary-red);
     font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
     min-height: 1.25rem;
     opacity: 0;
     transform: translateY(-0.25rem);
-    transition: all 0.3s ease;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
     letter-spacing: 0.01em;
 }
@@ -353,17 +366,17 @@ body::before {
     font-family: 'Poppins', sans-serif;
     font-size: 1.0625rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
     color: var(--white);
     border: none;
     border-radius: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0.25rem 1rem rgba(139, 127, 232, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
     letter-spacing: 0.02em;
-    animation: fadeUp 0.8s ease 0.5s both;
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
 }
 
 .submit::before {
@@ -372,12 +385,13 @@ body::before {
     inset: 0;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .submit:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 0.5rem 1.5rem rgba(139, 127, 232, 0.4);
+    transform: scale(1.02);
+    transform-origin: center;
+    box-shadow: var(--shadow-lg);
 }
 
 .submit:hover::before {
@@ -385,14 +399,14 @@ body::before {
 }
 
 .submit:active {
-    transform: translateY(-1px) scale(1);
+    transform: scale(1);
 }
 
 .footer {
     text-align: center;
     padding-top: 1.75rem;
-    border-top: 1px solid rgba(139, 127, 232, 0.15);
-    animation: fadeUp 0.8s ease 0.6s both;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
 
 .footer-main {
@@ -406,7 +420,7 @@ body::before {
 .footer-sub {
     font-size: 0.875rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -414,7 +428,7 @@ body::before {
 }
 
 .shake {
-    animation: shake 0.5s ease;
+    animation: shake 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes logoSpin {

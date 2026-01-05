@@ -9,8 +9,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#8B7FE8",
-  "background_color": "#E8DFFE",
+  "theme_color": "#667eea",
+  "background_color": "#f8f9fd",
   "display": "standalone",
   "start_url": "/",
   "scope": "/"

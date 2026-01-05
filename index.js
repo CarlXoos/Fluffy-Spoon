@@ -91,8 +91,8 @@ async function handleSubmit(e) {
 }
 
 function showError(message) {
-    tokenInput.style.borderColor = 'var(--error)';
-    passwordInput.style.borderColor = 'var(--error)';
+    tokenInput.style.borderColor = 'var(--secondary-red)';
+    passwordInput.style.borderColor = 'var(--secondary-red)';
     errorMsg.textContent = message;
     errorMsg.classList.add('show');
     tokenInput.classList.add('shake');

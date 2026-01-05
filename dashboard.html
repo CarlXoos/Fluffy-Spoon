@@ -48,7 +48,7 @@
     </div>
 
     <main class="container">
-        <section class="dashboard">
+        <article class="dashboard">
             <header class="header">
                 <h1 class="title">Carl's Free WiFi</h1>
                 <div class="marquee" aria-label="Basura Mo, Wifi Mo slogan">
@@ -57,9 +57,9 @@
             </header>
 
             <div class="content">
-                <div class="logo-container">
+                <figure class="logo-container">
                     <img src="logo.png" alt="Carl's Free WiFi" class="logo" id="mainLogo" width="110" height="110">
-                </div>
+                </figure>
 
                 <div class="status" role="status" aria-live="polite">
                     <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -71,7 +71,7 @@
                     <span class="status-text">Connected</span>
                 </div>
 
-                <div class="info">
+                <section class="info">
                     <div class="info-item">
                         <span class="info-label">IP Address</span>
                         <span class="info-value" id="ip" aria-live="polite">---</span>
@@ -80,10 +80,10 @@
                         <span class="info-label">MAC Address</span>
                         <span class="info-value" id="mac" aria-live="polite">---</span>
                     </div>
-                </div>
+                </section>
 
-                <div class="timer-section">
-                    <p class="timer-label">Remaining Time</p>
+                <section class="timer-section">
+                    <h2 class="timer-label">Remaining Time</h2>
                     <div class="timer" role="timer" aria-live="polite" aria-atomic="true">
                         <div class="timer-box">
                             <span class="timer-value" id="hours" aria-label="hours">0</span>
@@ -98,7 +98,7 @@
                             <span class="timer-unit">SEC</span>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <button class="btn" id="pauseBtn" aria-pressed="false">
                     Pause Time
@@ -108,7 +108,7 @@
                     Visit Main Portal
                 </button>
 
-                <div class="rates">
+                <section class="rates">
                     <h2 class="rates-title">WiFi Rates</h2>
                     <div class="rates-grid">
                         <article class="rate">
@@ -127,14 +127,14 @@
                             <p class="rate-value">20 Minutes</p>
                         </article>
                     </div>
-                </div>
+                </section>
             </div>
 
             <footer class="footer">
                 <p class="footer-main">Thank you for recycling with us!</p>
                 <p class="footer-sub">Prenza II, Marilao, Bulacan</p>
             </footer>
-        </section>
+        </article>
     </main>
 
     <script src="dashboard.js"></script>

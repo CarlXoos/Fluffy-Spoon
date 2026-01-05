@@ -60,7 +60,7 @@ function updateTimer() {
     
     if (timeLeft <= 60 && timeLeft > 0) {
         document.querySelectorAll('.timer-box').forEach(box => {
-            box.style.borderColor = 'var(--error)';
+            box.style.borderColor = 'var(--secondary-red)';
             box.style.animation = 'pulse 1s ease-in-out infinite';
         });
     }
