@@ -1,2 +1,2 @@
-# fluffy-spoon
+# Fluffy-Spoon
 School Purposes
