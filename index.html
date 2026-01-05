@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Carl's Free WiFi Portal - Basura Mo, Wifi Mo. Recycle plastic bottles for free internet access.">
+    <meta name="keywords" content="free wifi, recycle, plastic bottles, environmental initiative, Prenza II, Marilao, Bulacan">
+    <meta name="author" content="Carl Xoos">
     <meta name="theme-color" content="#8B7FE8">
     <link rel="canonical" href="https://carlfreewifi.onrender.com">
     
@@ -12,18 +14,24 @@
     <meta property="og:title" content="Carl's Free WiFi - Basura Mo, Wifi Mo">
     <meta property="og:description" content="Recycle plastic bottles for free internet access in Prenza II, Marilao, Bulacan. Turn your waste into WiFi!">
     <meta property="og:image" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta property="og:image:secure_url" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Carl's Free WiFi Logo">
     <meta property="og:site_name" content="Carl's Free WiFi">
+    <meta property="og:locale" content="en_PH">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://carlfreewifi.onrender.com">
-    <meta property="og:title" content="Carl's Free WiFi - Basura Mo, Wifi Mo">
+    <meta name="twitter:title" content="Carl's Free WiFi - Basura Mo, Wifi Mo">
     <meta name="twitter:description" content="Recycle plastic bottles for free internet access in Prenza II, Marilao, Bulacan. Turn your waste into WiFi!">
     <meta name="twitter:image" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta name="twitter:image:alt" content="Carl's Free WiFi Logo">
     
     <title>Carl's Free WiFi Portal</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preload" as="image" href="logo.png" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,12 +53,12 @@
                     <img src="logo.png" alt="Carl's Free WiFi Logo" class="logo" id="mainLogo" width="100" height="100">
                 </div>
                 <h1 class="title">Carl's Free WiFi</h1>
-                <div class="marquee">
-                    <span class="marquee-text">Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • </span>
+                <div class="marquee" aria-label="Basura Mo, Wifi Mo slogan">
+                    <span class="marquee-text" aria-hidden="true">Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • </span>
                 </div>
             </header>
 
-            <form class="form" id="loginForm" novalidate>
+            <form class="form" id="loginForm" novalidate aria-label="WiFi login form">
                 <div class="field">
                     <label for="token" class="label">Token</label>
                     <input 
@@ -62,6 +70,8 @@
                         inputmode="numeric"
                         maxlength="8"
                         required
+                        aria-required="true"
+                        aria-describedby="errorMsg"
                     >
                 </div>
 
@@ -77,13 +87,15 @@
                             inputmode="numeric"
                             maxlength="8"
                             required
+                            aria-required="true"
+                            aria-describedby="errorMsg"
                         >
-                        <button type="button" class="toggle" id="toggleBtn">
-                            <svg class="icon" id="iconShow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <button type="button" class="toggle" id="toggleBtn" aria-label="Toggle password visibility">
+                            <svg class="icon" id="iconShow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                                 <circle cx="12" cy="12" r="3"/>
                             </svg>
-                            <svg class="icon hidden" id="iconHide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <svg class="icon hidden" id="iconHide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
                                 <line x1="1" y1="1" x2="23" y2="23"/>
                             </svg>
@@ -91,7 +103,7 @@
                     </div>
                 </div>
 
-                <p class="error" id="errorMsg"></p>
+                <p class="error" id="errorMsg" role="alert" aria-live="polite"></p>
 
                 <button type="submit" class="submit">
                     Connect to Free WiFi

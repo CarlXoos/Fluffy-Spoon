@@ -14,18 +14,24 @@
     <meta property="og:title" content="Carl's Free WiFi - Basura Mo, Wifi Mo">
     <meta property="og:description" content="Turn plastic bottles into free internet! Exchange your recyclables for WiFi access in Prenza II, Marilao, Bulacan. Help the environment while staying connected.">
     <meta property="og:image" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta property="og:image:secure_url" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Carl's Free WiFi Logo">
     <meta property="og:site_name" content="Carl's Free WiFi">
+    <meta property="og:locale" content="en_PH">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://carlfreewifi.onrender.com/main.html">
     <meta name="twitter:title" content="Carl's Free WiFi - Basura Mo, Wifi Mo">
     <meta name="twitter:description" content="Turn plastic bottles into free internet! Exchange your recyclables for WiFi access in Prenza II, Marilao, Bulacan. Help the environment while staying connected.">
     <meta name="twitter:image" content="https://carlfreewifi.onrender.com/logo.png">
+    <meta name="twitter:image:alt" content="Carl's Free WiFi Logo">
     
     <title>Carl's Free WiFi - Basura Mo, Wifi Mo</title>
     <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
     <link rel="preload" as="image" href="logo.png" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,16 +40,16 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo" tabindex="0">Carl's WiFi</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#values">Values</a></li>
-                <li><a href="#contact">Contact</a></li>
+        <nav role="navigation" aria-label="Main navigation">
+            <div class="logo" tabindex="0" role="img" aria-label="Carl's WiFi">Carl's WiFi</div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="#values" role="menuitem">Values</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
-            <button class="mobile-menu">
+            <button class="mobile-menu" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -61,15 +67,15 @@
                 <p class="hero-description">Exchange your plastic bottles for WiFi access and help clean our community while staying connected online. We believe in creating sustainable solutions that benefit both people and the environment. Every bottle you recycle contributes to a cleaner Prenza II, Marilao, Bulacan, while providing you with reliable internet access for your daily needs.</p>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-value" data-target="2147">0</div>
+                        <div class="stat-value" data-target="2147" aria-label="2147 bottles recycled">0</div>
                         <p class="stat-label">Bottles Recycled</p>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value" data-target="156">0</div>
+                        <div class="stat-value" data-target="156" aria-label="156 active users">0</div>
                         <p class="stat-label">Active Users</p>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-value" data-target="6823">0</div>
+                        <div class="stat-value" data-target="6823" aria-label="6823 minutes connected">0</div>
                         <p class="stat-label">Minutes Connected</p>
                     </div>
                 </div>
@@ -84,7 +90,7 @@
             <h2 class="section-title">About the Program</h2>
             <div class="about-grid">
                 <article class="about-card">
-                    <div class="card-icon">
+                    <div class="card-icon" aria-hidden="true">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                             <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -95,7 +101,7 @@
                 </article>
 
                 <article class="about-card">
-                    <div class="card-icon">
+                    <div class="card-icon" aria-hidden="true">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
                             <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
@@ -108,7 +114,7 @@
                 </article>
 
                 <article class="about-card">
-                    <div class="card-icon">
+                    <div class="card-icon" aria-hidden="true">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                             <circle cx="9" cy="7" r="4"/>
@@ -124,26 +130,26 @@
         <section id="how-it-works">
             <h2 class="section-title">How It Works</h2>
             <div class="steps-container">
-                <div class="step-box">
-                    <div class="step-number">01</div>
+                <article class="step-box">
+                    <div class="step-number" aria-hidden="true">01</div>
                     <h3 class="step-title">Collect Bottles</h3>
                     <p class="step-description">Gather clean plastic bottles from your home, workplace, or neighborhood. Any size bottle works perfectly as long as it's empty, rinsed, and dry.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">02</div>
+                </article>
+                <article class="step-box">
+                    <div class="step-number" aria-hidden="true">02</div>
                     <h3 class="step-title">Visit Us</h3>
                     <p class="step-description">Bring your collected bottles to our location in Prenza II during operating hours. Our friendly team will greet you, count your bottles carefully, and explain how much WiFi time you've earned.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">03</div>
+                </article>
+                <article class="step-box">
+                    <div class="step-number" aria-hidden="true">03</div>
                     <h3 class="step-title">Get Access Code</h3>
                     <p class="step-description">Receive your unique WiFi token and password instantly after your bottles are counted. Each bottle gives you three minutes of internet time.</p>
-                </div>
-                <div class="step-box">
-                    <div class="step-number">04</div>
+                </article>
+                <article class="step-box">
+                    <div class="step-number" aria-hidden="true">04</div>
                     <h3 class="step-title">Connect Online</h3>
                     <p class="step-description">Use your access code to connect to our secure WiFi network from anywhere within range. Enjoy fast, uninterrupted internet for the duration of your earned time.</p>
-                </div>
+                </article>
             </div>
         </section>
 
@@ -176,7 +182,7 @@
                     <h3>Location & Hours</h3>
                     <div class="info-content">
                         <div class="info-row">
-                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                 <circle cx="12" cy="10" r="3"/>
                             </svg>
@@ -186,7 +192,7 @@
                             </div>
                         </div>
                         <div class="info-row">
-                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                                 <line x1="16" y1="2" x2="16" y2="6"/>
                                 <line x1="8" y1="2" x2="8" y2="6"/>
@@ -198,7 +204,7 @@
                             </div>
                         </div>
                         <div class="info-row">
-                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="info-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <circle cx="12" cy="12" r="10"/>
                                 <polyline points="12 6 12 12 16 14"/>
                             </svg>
@@ -210,23 +216,38 @@
                     </div>
                 </article>
 
-                <form class="contact-form" id="contactForm" novalidate>
+                <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
                     <h3 class="form-title">Send a Message</h3>
                     <p class="form-subtitle">Have questions? We are happy to help.</p>
                     
                     <div class="form-group">
                         <label for="userName">Your Name</label>
-                        <input type="text" id="userName" name="userName" placeholder="Enter your name" required autocomplete="name">
+                        <input 
+                            type="text" 
+                            id="userName" 
+                            name="userName" 
+                            placeholder="Enter your name" 
+                            required 
+                            autocomplete="name"
+                            aria-required="true"
+                        >
                     </div>
 
                     <div class="form-group">
                         <label for="userMessage">Your Message</label>
-                        <textarea id="userMessage" name="userMessage" placeholder="Type your message here..." required rows="5"></textarea>
+                        <textarea 
+                            id="userMessage" 
+                            name="userMessage" 
+                            placeholder="Type your message here..." 
+                            required 
+                            rows="5"
+                            aria-required="true"
+                        ></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitButton">Send Message</button>
 
-                    <div class="form-message" id="formFeedback"></div>
+                    <div class="form-message" id="formFeedback" role="alert" aria-live="polite"></div>
                 </form>
             </div>
         </section>
