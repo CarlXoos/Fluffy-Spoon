@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connected to Carl's Free WiFi - Monitor your remaining time and enjoy free internet access.">
+    <meta name="theme-color" content="#8B7FE8">
+    <link rel="canonical" href="https://carlsfreewifi.onrender.com/dashboard.html">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carlsfreewifi.onrender.com/dashboard.html">
+    <meta property="og:title" content="Connected - Carl's Free WiFi Dashboard">
+    <meta property="og:description" content="You're connected! Monitor your remaining WiFi time earned from recycling plastic bottles.">
+    <meta property="og:image" content="https://carlsfreewifi.onrender.com/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Carl's Free WiFi">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://carlsfreewifi.onrender.com/dashboard.html">
+    <meta name="twitter:title" content="Connected - Carl's Free WiFi Dashboard">
+    <meta name="twitter:description" content="You're connected! Monitor your remaining WiFi time earned from recycling plastic bottles.">
+    <meta name="twitter:image" content="https://carlsfreewifi.onrender.com/logo.png">
+    
+    <title>Connected - Carl's Free WiFi</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preload" as="image" href="logo.png" fetchpriority="high">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <img src="logo.png" alt="Carl's WiFi Logo" class="loading-logo" id="loadingLogo" width="180" height="180">
+            <p class="loading-text" id="loadingText">Loading Main Portal</p>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="dashboard">
+            <header class="header">
+                <h1 class="title">Carl's Free WiFi</h1>
+                <div class="marquee">
+                    <span class="marquee-text">Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • Basura Mo, Wifi Mo! • </span>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Carl's Free WiFi" class="logo" id="mainLogo" width="110" height="110">
+                </div>
+
+                <div class="status">
+                    <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+                        <line x1="12" y1="20" x2="12.01" y2="20"/>
+                    </svg>
+                    <span class="status-text">Connected</span>
+                </div>
+
+                <div class="info">
+                    <div class="info-item">
+                        <span class="info-label">IP Address</span>
+                        <span class="info-value" id="ip">---</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">MAC Address</span>
+                        <span class="info-value" id="mac">---</span>
+                    </div>
+                </div>
+
+                <div class="timer-section">
+                    <p class="timer-label">Remaining Time</p>
+                    <div class="timer">
+                        <div class="timer-box">
+                            <span class="timer-value" id="hours">0</span>
+                            <span class="timer-unit">HR</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="timer-value" id="minutes">0</span>
+                            <span class="timer-unit">MIN</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="timer-value" id="seconds">0</span>
+                            <span class="timer-unit">SEC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn" id="pauseBtn">
+                    Pause Time
+                </button>
+
+                <button class="btn btn-portal" id="portalBtn">
+                    Visit Main Portal
+                </button>
+
+                <div class="rates">
+                    <h2 class="rates-title">WiFi Rates</h2>
+                    <div class="rates-grid">
+                        <div class="rate">
+                            <div class="rate-number">1</div>
+                            <p class="rate-label">Bottle</p>
+                            <p class="rate-value">3 Minutes</p>
+                        </div>
+                        <div class="rate">
+                            <div class="rate-number">3</div>
+                            <p class="rate-label">Bottles</p>
+                            <p class="rate-value">10 Minutes</p>
+                        </div>
+                        <div class="rate">
+                            <div class="rate-number">5</div>
+                            <p class="rate-label">Bottles</p>
+                            <p class="rate-value">20 Minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p class="footer-main">Thank you for recycling with us!</p>
+                <p class="footer-sub">Prenza II, Marilao, Bulacan</p>
+            </footer>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
