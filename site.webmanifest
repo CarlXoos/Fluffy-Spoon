@@ -1,0 +1,17 @@
+{
+  "name": "Carl's Free WiFi",
+  "short_name": "Carl's WiFi",
+  "description": "Basura Mo, Wifi Mo - Recycle plastic bottles for free internet access",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#8B7FE8",
+  "background_color": "#E8DFFE",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
