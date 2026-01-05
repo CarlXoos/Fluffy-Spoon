@@ -4,13 +4,12 @@
   "description": "Basura Mo, Wifi Mo - Recycle plastic bottles for free internet access",
   "icons": [
     {
-      "src": "logo.png",
-      "sizes": "any",
+      "src": "app.png",
       "type": "image/png"
     }
   ],
-  "theme_color": "#667eea",
-  "background_color": "#f8f9fd",
+  "theme_color": "#764ba2",
+  "background_color": "#764ba2",
   "display": "standalone",
   "start_url": "/",
   "scope": "/"
