@@ -4,13 +4,13 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getDatabase, ref, push, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBSGh2R2_ivDkRIFKDc3UStBk1Ffgb7aa0",
-    authDomain: "reze-1cb12.firebaseapp.com",
-    databaseURL: "https://reze-1cb12-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "reze-1cb12",
-    storageBucket: "reze-1cb12.firebasestorage.app",
-    messagingSenderId: "528113849690",
-    appId: "1:528113849690:web:d33c73fb6c418ab9328f63"
+    apiKey: "AIzaSyDyXVjspX2FqXaLq6Tu-y3eHbBHSvy2HTM",
+    authDomain: "carl-free-wifi-2a12c.firebaseapp.com",
+    databaseURL: "https://carl-free-wifi-2a12c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "carl-free-wifi-2a12c",
+    storageBucket: "carl-free-wifi-2a12c.firebasestorage.app",
+    messagingSenderId: "1027087641458",
+    appId: "1:1027087641458:web:721176ef767b3015afcbeb"
 };
 
 let app, database;
